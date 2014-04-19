@@ -3,6 +3,15 @@
 ## rather than computing it repeatedly. They need to be used in
 ## conjunction with each other.
 
+# EXAMPLE USAGE
+#
+# source('cachematrix.R')
+# c=rbind(c(1, -1/4), c(-1/4, 1)) # create test matrix
+# cm = makeCacheMatrix(c)         # cache matrix for c
+# cacheSolve(cm)                  # solve and cache inverse
+# cacheSolve(cm)                  # retrieve cached inverse
+# cacheSolve(cm) %*% c            # test that inverse is correct, result should be Identiry matrix
+
 
 ## makeCacheMatrix
 #  This function creates a special "matrix" object that can cache its inverse.
